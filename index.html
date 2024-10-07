@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Pop-up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ccc;
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #music-player {
+            position: fixed;
+            top: 10px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001; /* Make sure it's above the popup */
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="overlay"></div>
+    <div id="popup">
+        <p>Do you want to play music?</p>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div id="music-player">
+        <audio id="background-music" src="hbd.mp3" loop controls></audio>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        document.getElementById('yes').onclick = function() {
+            playMusic();
+            closePopup();
+        };
+
+        document.getElementById('no').onclick = function() {
+            playMusic();
+            closePopup();
+        };
+
+        function playMusic() {
+            const music = document.getElementById('background-music');
+            music.play().catch(function(error) {
+                console.log('Error playing music:', error);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+    <title>Wanna Be Yours🥹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Custom Fonts -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffcccb, #ffe4e1);
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300vh;
+            text-align: center;
+            color: #d50000;
+            animation: pulse 2s infinite;
+            overflow: auto;
+            padding: 20px; /* Padding for smaller screens */
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 20px 0 0;
+            animation: bounce 1s infinite alternate;
+            font-family: 'Pacifico', cursive; /* Custom font for the heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #ff6f61; /* Color for the title */
+            position: relative;
+            display: inline-block;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: #ffcccb;
+            bottom: -10px;
+            left: 0;
+            border-radius: 10px;
+            animation: slide 1s infinite alternate; /* Animated underline */
+        }
+        .proposal {
+            font-size: 1.2em; /* Adjusted for better mobile view */
+            margin: 20px 0;
+            transition: color 0.5s;
+            background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+            border: 2px solid #ff6f61; /* Cute border */
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px; /* Increased padding for better spacing */
+            animation: fadeIn 1s, scaleUp 1s infinite alternate; /* Added scale animation */
+            color: #333; /* Darker text for better readability */
+            line-height: 1.6;
+            backdrop-filter: blur(8px); /* Blurring effect for a soft look */
+            position: relative; /* Relative for positioning effects */
+            overflow: hidden; /* To prevent overflow */
+        }
+        .proposal::before { /* Decorative elements */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1); /* Overlay effect */
+            border-radius: 20px;
+            z-index: 0;
+            animation: wave 5s infinite; /* Soft wave animation */
+        }
+        .proposal:hover {
+            color: #ff6f61;
+        }
+        .link {
+            font-size: 1.2em;
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: swing 1s infinite;
+        }
+        .link:hover {
+            transform: scale(1.1);
+            background: #ff5a5a;
+        }
+        #hiddenMessage {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ff6f61;
+            font-style: italic; /* Italics for a more heartfelt feel */
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(1); }
+            to { transform: scale(1.02); }
+        }
+        @keyframes swing {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes slide {
+            0% { transform: translateX(-10px); }
+            100% { transform: translateX(10px); }
+        }
+        img {
+            width: 100px; /* Adjust size as needed */
+            margin-bottom: 10px; /* Space between image and text */
+            animation: float 3s infinite ease-in-out; /* Floating animation */
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Responsive heading size */
+            }
+            .proposal {
+                font-size: 1.1em; /* Responsive paragraph font size */
+                padding: 20px; /* Adjust padding for mobile */
+            }
+            .link {
+                font-size: 1em; /* Responsive button size */
+            }
+           
+    </style>
+</head>
+<body>
+
+    <div>
+        <img src="YOUR_GIF_URL.gif" alt="Cute sticker or GIF">
+        <h1>Wanna Be Yours🥹</h1>
+        <p class="proposal">In a world full of infinite possibilities, you are my favorite constant. Just as every great program needs a solid foundation, my heart found its home with you. Your smile brightens my darkest days, and your laughter is the sweetest melody that fills my soul. Every moment spent with you feels like magic, where time stands still and everything else fades away. I want to be by your side through all of life’s adventures, from the mundane to the extraordinary. Just like how a beautiful story unfolds, I dream of writing our own together—filled with laughter, love, and countless memories. You inspire me to be the best version of myself, and I can’t imagine my life without you. I want to be the one who supports your dreams, shares your joys, and stands by you during the tough times. With you, I feel like I can conquer anything. So, from the bottom of my heart, I want to say: Just wanna be yours. Let’s embark on this journey together and create a love story that’s uniquely ours. You truly make my heart feel complete! ❤️</p>
+ <a <button  href="https://ansh-gupta-technical.github.io/Do-You-/">Click Here For Surprise!🎁</button> </a> 
+    </div>
+</body>
+</html>
